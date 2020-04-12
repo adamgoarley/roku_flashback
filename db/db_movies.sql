@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 11, 2020 at 06:21 PM
+-- Generation Time: Apr 12, 2020 at 06:05 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.8
 
@@ -50,35 +50,34 @@ INSERT INTO `tbl_arating` (`arating_id`, `arating_name`, `arating_desc`) VALUES
 --
 
 CREATE TABLE `tbl_audio` (
-  `audio_id` int(11) NOT NULL,
-  `audio_name` varchar(50) COLLATE utf16_bin NOT NULL,
-  `audio_artist` varchar(30) COLLATE utf16_bin NOT NULL,
-  `audio_cover` varchar(50) COLLATE utf16_bin NOT NULL,
-  `audio_link` varchar(50) COLLATE utf16_bin NOT NULL,
-  `audio_year` int(5) NOT NULL,
-  `audio_decade` int(4) NOT NULL
+  `audios_id` int(11) NOT NULL,
+  `audios_title` varchar(50) COLLATE utf16_bin NOT NULL,
+  `audios_artist` varchar(30) COLLATE utf16_bin NOT NULL,
+  `audios_cover` varchar(50) COLLATE utf16_bin NOT NULL,
+  `audios_link` varchar(50) COLLATE utf16_bin NOT NULL,
+  `audios_decade` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 
 --
 -- Dumping data for table `tbl_audio`
 --
 
-INSERT INTO `tbl_audio` (`audio_id`, `audio_name`, `audio_artist`, `audio_cover`, `audio_link`, `audio_year`, `audio_decade`) VALUES
-(1, 'The Wanderer', 'Dion and the Belmonts', 'dion.jpeg', 'dion.mp3', 1959, 50),
-(2, 'All Shook Up', 'Elvis Presley', 'elvis.jpg', 'Elvis Presley - All Shook up (Audio).mp3', 1957, 50),
-(3, 'Goodnight Irene', 'The Weavers', 'irene.jpeg', '	 The Weavers - Goodnight Irene.mp3', 1955, 50),
-(4, 'Come Together', 'The Beatles', 'beatles.jpeg', 'Come Together (Remastered 2009).mp3', 1969, 60),
-(5, 'Down On The Corner', 'Creedence Clearwater Revival', 'ccr.jpeg', 'ccr.mp3', 1969, 60),
-(6, 'Sympathy for the Devil', 'Rolling Stones', 'stones.jpeg', 'devil.mp3', 1969, 60),
-(7, 'Hotel California', 'The Eagles', 'eagles.jpeg', 'Eagles - Hotel California.mp3', 1976, 70),
-(8, 'Money', 'Pink Floyd', 'money.jpeg', 'Money - Pink Floyd HD (Studio Version).mp3', 1973, 70),
-(9, 'Rocket Man', 'Elton John', 'elton.jpeg', 'Money - Pink Floyd HD (Studio Version).mp3', 1972, 70),
-(10, 'Rio', 'Duran Duran', 'rio.jpeg', 'Duran Duran - Rio (Official Music Video).mp3', 1980, 80),
-(11, 'Jack and Diane', 'John Mellencamp', 'jack.jpeg', 'John Mellencamp - Jack & Diane.mp3', 1982, 80),
-(12, 'Rock The Casbah', 'The Clash', 'clash.jpeg', 'The Clash - Rock the Casbah (Official Video).mp3', 1982, 80),
-(13, 'Nothing Else Matters', 'Metallica', 'metallica.jpeg', 'Metallica Nothing Else Matters.mp3', 1990, 90),
-(14, 'Even Flow', 'Pearl Jam', 'pearl.jpeg', 'Pearl Jam - Even Flow.mp3', 1991, 90),
-(15, 'Interstate Love Song', 'Stone Temple Pilots', 'stp.jpeg', 'Stone Temple Pilots - Interstate Love Song.mp3', 1994, 90);
+INSERT INTO `tbl_audio` (`audios_id`, `audios_title`, `audios_artist`, `audios_cover`, `audios_link`, `audios_decade`) VALUES
+(1, 'The Wanderer', 'Dion and the Belmonts', 'dion.jpeg', 'dion.mp3', 50),
+(2, 'All Shook Up', 'Elvis Presley', 'elvis.jpg', 'Elvis Presley - All Shook up (Audio).mp3', 50),
+(3, 'Goodnight Irene', 'The Weavers', 'irene.jpeg', '	 The Weavers - Goodnight Irene.mp3', 50),
+(4, 'Come Together', 'The Beatles', 'beatles.jpeg', 'Come Together (Remastered 2009).mp3', 60),
+(5, 'Down On The Corner', 'Creedence Clearwater Revival', 'ccr.jpeg', 'ccr.mp3', 60),
+(6, 'Sympathy for the Devil', 'Rolling Stones', 'stones.jpeg', 'devil.mp3', 60),
+(7, 'Hotel California', 'The Eagles', 'eagles.jpeg', 'Eagles - Hotel California.mp3', 70),
+(8, 'Money', 'Pink Floyd', 'money.jpeg', 'Money - Pink Floyd HD (Studio Version).mp3', 70),
+(9, 'Rocket Man', 'Elton John', 'elton.jpeg', 'Money - Pink Floyd HD (Studio Version).mp3', 70),
+(10, 'Rio', 'Duran Duran', 'rio.jpeg', 'Duran Duran - Rio (Official Music Video).mp3', 80),
+(11, 'Jack and Diane', 'John Mellencamp', 'jack.jpeg', 'John Mellencamp - Jack & Diane.mp3', 80),
+(12, 'Rock The Casbah', 'The Clash', 'clash.jpeg', 'The Clash - Rock the Casbah (Official Video).mp3', 80),
+(13, 'Nothing Else Matters', 'Metallica', 'metallica.jpeg', 'Metallica Nothing Else Matters.mp3', 90),
+(14, 'Even Flow', 'Pearl Jam', 'pearl.jpeg', 'Pearl Jam - Even Flow.mp3', 90),
+(15, 'Interstate Love Song', 'Stone Temple Pilots', 'stp.jpeg', 'Stone Temple Pilots - Interstate Love Song.mp3', 90);
 
 -- --------------------------------------------------------
 
@@ -513,12 +512,12 @@ CREATE TABLE `tbl_genre` (
 --
 
 INSERT INTO `tbl_genre` (`genre_id`, `genre_name`) VALUES
-(1, 'Action'),
-(2, 'Adventure'),
-(3, 'Comedy'),
-(4, 'Crime'),
-(5, 'Drama'),
-(6, 'Historical');
+(1, '1950'),
+(2, '1960'),
+(3, '1970'),
+(4, '1980'),
+(5, '1990'),
+(6, 'All');
 
 -- --------------------------------------------------------
 
@@ -788,7 +787,7 @@ INSERT INTO `tbl_movies` (`movies_id`, `movies_cover`, `movies_title`, `movies_y
 (10, 'backtofuture.jpeg', 'Back To the Future', '1985', '1h 56m', 'Marty travels back in time using an eccentric scientist\'s time machine. However, he must make his high-school-aged parents fall in love in order to return to the present.', 'backtofuture.mp4', 'November 4, 2016', 1, '80'),
 (11, 'breakfastclub.jpeg', 'The Breakfast Club', '1985', '1h 37m', 'Five high school students from different walks of life endure a Saturday detention under a power-hungry principal (Paul Gleason). The disparate group includes rebel John (Judd Nelson), princess Claire (Molly Ringwald), outcast Allison (Ally Sheedy), brainy Brian (Anthony Michael Hall) and Andrew (Emilio Estevez), the jock. Each has a chance to tell his or her story, making the others see them a little differently -- and when the day ends, they question whether school will ever be the same.\r\n', 'breakfastclub.mp4', 'January 8, 2015', 4, '80'),
 (12, 'shining.jpeg', 'The Shining', '1980', '2h 26m', 'Jack and his family move into an isolated hotel with a violent past. Living in isolation, Jack begins to lose his sanity, which affects his family members.', 'shining.mp4', 'November 25, 2015', 4, '80'),
-(13, 'dazed.jpeg', 'Dazed and Confudsed', '1993', '1h 43m', 'In 1976 Texas, a bunch of teenagers celebrate the last day of high school by hazing freshmen, partying at a local pool, indulging in drugs and following it up with a keg party.', 'dazed.mp4', 'October 9, 2015', 3, '90'),
+(13, 'dazed.jpeg', 'Dazed and Confused', '1993', '1h 43m', 'In 1976 Texas, a bunch of teenagers celebrate the last day of high school by hazing freshmen, partying at a local pool, indulging in drugs and following it up with a keg party.', 'dazed.mp4', 'October 9, 2015', 3, '90'),
 (14, 'forrest.jpeg', 'Forrest Gump', '1994', '2h 22m', 'Forrest Gump, a man with a low IQ, joins the army for service where he meets Dan and Bubba. However, he cannot stop thinking about his childhood sweetheart Jenny Curran, whose life is messed up.', 'forrest.mp4', 'April 15, 2015', 0, '90'),
 (15, 'goodfellas.jpeg', 'Goodfellas', '1990', '2h 28m', 'Young Henry Hill, with his friends Jimmy and Tommy, begins the climb from being a petty criminal to a gangster on the mean streets of New York.\r\n', 'goodfellas.mp4', 'December 18, 2015', 5, '90');
 
@@ -996,19 +995,19 @@ CREATE TABLE `tbl_mov_genre` (
 
 INSERT INTO `tbl_mov_genre` (`mov_genre_id`, `movies_id`, `genre_id`) VALUES
 (1, 1, 1),
-(2, 2, 2),
-(3, 2, 3),
-(4, 4, 1),
-(5, 5, 5),
-(6, 6, 6),
-(7, 7, 2),
-(8, 8, 1),
-(9, 9, 5),
-(10, 10, 6),
-(11, 11, 1),
-(12, 12, 2),
+(2, 2, 1),
+(3, 3, 1),
+(4, 4, 2),
+(5, 5, 2),
+(6, 6, 2),
+(7, 7, 3),
+(8, 8, 3),
+(9, 9, 3),
+(10, 10, 4),
+(11, 11, 4),
+(12, 12, 4),
 (13, 13, 5),
-(14, 14, 3),
+(14, 14, 5),
 (15, 15, 5);
 
 -- --------------------------------------------------------
@@ -1093,6 +1092,82 @@ INSERT INTO `tbl_mov_studio` (`mov_studio_id`, `movies_id`, `studio_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_shows`
+--
+
+CREATE TABLE `tbl_shows` (
+  `shows_id` int(11) NOT NULL,
+  `shows_title` varchar(30) COLLATE utf16_bin NOT NULL,
+  `shows_cover` varchar(50) COLLATE utf16_bin NOT NULL,
+  `shows_trailer` varchar(100) COLLATE utf16_bin NOT NULL,
+  `shows_year` varchar(5) COLLATE utf16_bin NOT NULL,
+  `shows_storyline` text COLLATE utf16_bin NOT NULL,
+  `shows_runtime` varchar(100) COLLATE utf16_bin NOT NULL,
+  `shows_release` varchar(20) COLLATE utf16_bin NOT NULL,
+  `shows_decade` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+
+--
+-- Dumping data for table `tbl_shows`
+--
+
+INSERT INTO `tbl_shows` (`shows_id`, `shows_title`, `shows_cover`, `shows_trailer`, `shows_year`, `shows_storyline`, `shows_runtime`, `shows_release`, `shows_decade`) VALUES
+(1, 'Maverick', 'maverick.jpeg', 'maverick.mp4', '1957', 'Two brothers, Bret and Bart Maverick, gamble their way across the Wild West and make money while avoiding as much unnecessary trouble as possible.', '', '5 Seasons', 50),
+(2, 'The Real Mccoys', 'mccoys.jpeg', 'mccoys.mp4', '1957', 'From the hills of West Virginia, Amos McCoy moves his family to an inherited farm in California. Grampa Amos is quick to give advice to his three grandchildren and wonders how his neighbours ever managed without him around.\r\n', '', '5 Seasons', 50),
+(5, 'Superman', 'superman.jpeg', 'superman.mp4', '1952', 'It\'s a bird! It\'s a plane! It\'s a syndicated TV adaptation of the beloved DC Comics superhero! You know the drill: When he isn\'t fighting for truth, justice and the American way, the man in tights dons a suit and glasses for his secret identity as Daily Planet newspaper reporter Clark Kent, who works alongside friends Lois Lane and Jimmy Olsen for gruff boss Perry White.', '', '6 seasons', 50),
+(6, 'The Flinstones', 'flinstones.jpeg', 'flinstones.mp4', '1960', 'The Flintstones were the modern Stone Age family. Residing in Bedrock, Fred Flintstone worked an unsatisfying quarry job, but returned home to lovely wife Wilma and eventually daughter Pebbles. Fred, a big fan of golf and bowling, also enjoyed bullying neighbor Barney Rubble, while Barney\'s saucy wife Betty was best friends with Wilma. During the show\'s run, Barney and Betty would adopt an unnaturally strong son, Bamm-Bamm, who would become friends with little Pebbles. \"The Flintstones,\" heavily inspired by \"The Honeymooners,\" convinced a generation of children that dinosaurs and humans occupied the planet at the same time.\r\n', '', '3 Seasons', 60),
+(7, 'Gilligan\'s Island', 'gilligans.jpeg', 'gilligans.mp4', '1964', ' Seven people from different walks of life are cast away at an unknown island after a violent storm. They adapt to their life on the island while continuously making attempts to escape.\r\n', '', '3 Seasons', 60),
+(8, 'The Jetsons', 'jetsons.jpeg', 'jetsons.mp4', '1962', '\"Meet George Jetson.\" Just those words will prompt viewers of a certain age to join in singing the show\'s catchy theme song. This popular primetime cartoon show features the Jetson family living in a utopian future. People live in housing in the sky, work a three-day workweek, drive aerocars that look like flying saucers and have incredible conveniences that leave them with plenty of leisure time. George, his homemaker wife Jane, and their children, Judy and Elroy, also have a robotic maid named Rosie and a talking dog named Astro. Airing first on ABC in the 1960s, the series was resurrected in the 1980s, with more episodes produced for syndication.\r\n', '', '3 Seasons', 60),
+(9, 'Battlestar Gallactica', 'battlestar.jpeg', 'battlestar.mp4', '1978', 'Battlestar Gallactica- In the seventh millennium, AD, Galactica is the only surviving battleship after an attack by the evil Cylons. As a result of the attack, peace is destroyed and most of humankind have been wiped out. Led by Commander Adama, Galactica and a hundred or so smaller ships flee to try to find refuge on the legendary but unknown planet Earth. The Cylons, with the help of the equally evil Count Baltar, are in hot pursuit.\r\n', '', '1 Season', 70),
+(10, 'Dallas', 'dallas.jpg', 'dallas.mp4', '1978', '\"Dallas\" is the saga of the Ewing family and its massive oil empire. Patriarch Jock has three sons. The eldest is J.R., the relentless CEO of Ewing Oil. Less obviously malicious are Bobby and Gary. Over a decade-plus of backstabbing, inbreeding, lust and greed, dozens of characters enter and exit the \"Dallas\" universe.', '', '14 Seasons', 70),
+(11, 'Jeopardy', 'jeopardy.jpg', 'jeopardy.mp4', '1974', '\"Jeopardy!\" is a classic game show -- with a twist. The answers are given first, and the contestants supply the questions. Three contestants, including the previous show\'s champion, compete in six categories and in three rounds (with each round\'s \"answers\" being worth more prize money). In the third round, \"Final Jeopardy,\" the contestants can name their own jackpot -- as long as it\'s within the amount of money they\'ve already earned. If a player finishes the second round with zero dollars, they are eliminated from \"Final Jeopardy.\" The first version of \"Jeopardy!,\" which aired from 1964 to 1975 on NBC, was hosted by Art Fleming. Alex Trebek is the current host; he began with the program in 1984 (at the start of its syndicated run)\r\n', '', '3 Seasons', 70),
+(12, 'Golden Girls', 'goldengirls.jpeg', 'goldengirls.mp4', '1985', 'Girls from different parts of the country participate in a series of contests and demonstrate their unique skills and talent to win the coveted title.\r\n', '', '7 Seasons', 70),
+(13, 'Cops', 'cops.jpeg', 'cops.mp4', '1989', 'Television cameras follow real-life law enforcement officers and capture the action as they perform their daily duty to serve and protect the public.\r\n', '', '29 Seasons', 80),
+(14, 'The simpsons', 'simpsons.jpeg', 'simpsons.mp4', '1989', 'Working-class father Homer Simpson and his dysfunctional family deal with comical situations and the ups-and-downs of life in the town of Springfield.\r\n', '', '30 Seasons', 80),
+(15, 'Fresh Prince of Bel-Air', 'freshprince.jpeg', 'freshprince.mp4', '1990', 'Will Smith more or less plays himself in this good-natured NBC sitcom. As the show\'s popular theme song explains, fictional Will\'s mom sends him away from his rough Philadelphia neighborhood to live with wealthy Uncle Phil and Aunt Vivian in Bel-Air. Will often has fun at the expense of stuck-up cousins Carlton and Hilary.\r\n', '', '6 Seasons', 90),
+(16, 'Saved By The Bell', 'bell.jpeg', 'bell.mp4', '1990', 'Zack Morris and A C Slater, who study at Bayside High, vie for their classmate Kelly Kapowski\'s attention. However, Principal Belding keeps an eye on them and tries to ruin their plans.\r\n', '', '4 Seasons', 90),
+(17, 'That 70s Show', 'that70s.jpeg', 'that70s.mp4', '1998', 'Eric, a high school student, and his group of teenage friends struggle to lead purposeful lives whilst going through the tumultuous phase of adolescence\r\n', '', '8 Seasons', 90);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_songs`
+--
+
+CREATE TABLE `tbl_songs` (
+  `song_id` int(11) NOT NULL,
+  `song_name` varchar(50) NOT NULL,
+  `song_artist` varchar(50) NOT NULL,
+  `song_cover_art` varchar(50) NOT NULL,
+  `song_file` varchar(50) NOT NULL,
+  `song_year` int(4) NOT NULL,
+  `song_decade` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_songs`
+--
+
+INSERT INTO `tbl_songs` (`song_id`, `song_name`, `song_artist`, `song_cover_art`, `song_file`, `song_year`, `song_decade`) VALUES
+(1, 'The Wanderer', 'Dion And The Belmonts', 'dion.jpeg', 'dion.mp3', 1959, '50'),
+(2, 'All Shook Up', 'Elvis Presley', 'elvis.jpg', 'Elvis Presley - All Shook up (Audio).mp3', 1952, '50'),
+(3, 'Goodnight Irene', 'The Weavers', 'irene.jpeg', 'The Weavers - Goodnight Irene.mp3', 1955, '50'),
+(4, 'Come Together', 'The Beatles', 'beatles.jpeg', 'Come Together (Remastered 2009).mp3', 1969, '60'),
+(7, 'Down On The Corner', 'Creedence Clearwater Revival', 'ccr.jpeg', 'ccr.mp3', 1969, '60'),
+(8, 'Sympathy For the Devil', 'Rolling Stones', 'stones.jpeg', 'devil.mp3', 1969, '60'),
+(9, 'Hotel California', 'The Eagles', 'eagles.jpeg', 'Eagles - Hotel California.mp3', 1976, '70'),
+(10, 'Money', 'Pink Floyd', 'money.jpeg', 'Money - Pink Floyd HD (Studio Version).mp3', 1973, '70'),
+(11, 'Rocket Man', 'Elton John', 'elton.jpeg', 'Money - Pink Floyd HD (Studio Version).mp3', 1972, '70'),
+(12, 'Rio', 'Duran Duran', 'rio.jpeg', 'Duran Duran - Rio (Official Music Video).mp3', 1980, '80'),
+(13, 'Jack and Diane', 'John Mellencamp', 'jack.jpeg', 'John Mellencamp - Jack & Diane.mp3', 1982, '1980'),
+(14, 'Rock The Casbah', 'The Clash', 'clash.jpeg', 'The Clash - Rock the Casbah (Official Video).mp3', 1982, '80'),
+(15, 'Nothing Else Matters', 'Metallica', 'metallica.jpeg', 'Metallica Nothing Else Matters.mp3', 1990, '90'),
+(16, 'Even Flow', 'Pearl Jam', 'pearl.jpeg', 'Pearl Jam - Even Flow.mp3', 1991, '90'),
+(17, 'Interstate Love Song', 'Stone Temple Pilots', 'stp.jpeg', 'Stone Temple Pilots - Interstate Love Song.mp3', 1994, '90');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_studio`
 --
 
@@ -1126,44 +1201,6 @@ INSERT INTO `tbl_studio` (`studio_id`, `studio_name`) VALUES
 (18, 'Warner Bros.'),
 (19, 'Fox 2000 Pictures'),
 (20, 'Weinstein Company');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_tv`
---
-
-CREATE TABLE `tbl_tv` (
-  `tv_id` int(11) NOT NULL,
-  `tv_name` varchar(30) COLLATE utf16_bin NOT NULL,
-  `tv_cover` varchar(50) COLLATE utf16_bin NOT NULL,
-  `tv_link` varchar(100) COLLATE utf16_bin NOT NULL,
-  `tv_year` varchar(5) COLLATE utf16_bin NOT NULL,
-  `tv_description` text COLLATE utf16_bin NOT NULL,
-  `tv_seasons` varchar(20) COLLATE utf16_bin NOT NULL,
-  `tv_decade` int(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
-
---
--- Dumping data for table `tbl_tv`
---
-
-INSERT INTO `tbl_tv` (`tv_id`, `tv_name`, `tv_cover`, `tv_link`, `tv_year`, `tv_description`, `tv_seasons`, `tv_decade`) VALUES
-(1, 'Maverick', 'maverick.jpeg', 'maverick.mp4', '1957', 'Two brothers, Bret and Bart Maverick, gamble their way across the Wild West and make money while avoiding as much unnecessary trouble as possible.', '5 Seasons', 50),
-(2, 'The Real Mccoys', 'mccoys.jpeg', 'mccoys.mp4', '1957', 'From the hills of West Virginia, Amos McCoy moves his family to an inherited farm in California. Grampa Amos is quick to give advice to his three grandchildren and wonders how his neighbours ever managed without him around.\r\n', '5 Seasons', 50),
-(5, 'Superman', 'superman.jpeg', 'superman.mp4', '1952', 'It\'s a bird! It\'s a plane! It\'s a syndicated TV adaptation of the beloved DC Comics superhero! You know the drill: When he isn\'t fighting for truth, justice and the American way, the man in tights dons a suit and glasses for his secret identity as Daily Planet newspaper reporter Clark Kent, who works alongside friends Lois Lane and Jimmy Olsen for gruff boss Perry White.', '6 seasons', 50),
-(6, 'The Flinstones', 'flinstones.jpeg', 'flinstones.mp4', '1960', 'The Flintstones were the modern Stone Age family. Residing in Bedrock, Fred Flintstone worked an unsatisfying quarry job, but returned home to lovely wife Wilma and eventually daughter Pebbles. Fred, a big fan of golf and bowling, also enjoyed bullying neighbor Barney Rubble, while Barney\'s saucy wife Betty was best friends with Wilma. During the show\'s run, Barney and Betty would adopt an unnaturally strong son, Bamm-Bamm, who would become friends with little Pebbles. \"The Flintstones,\" heavily inspired by \"The Honeymooners,\" convinced a generation of children that dinosaurs and humans occupied the planet at the same time.\r\n', '3 Seasons', 60),
-(7, 'Gilligan\'s Island', 'gilligans.mp4', 'gilligans.mp4', '1964', ' Seven people from different walks of life are cast away at an unknown island after a violent storm. They adapt to their life on the island while continuously making attempts to escape.\r\n', '3 Seasons', 60),
-(8, 'The Jetsons', 'jetsons.jpeg', 'jetsons.mp4', '1962', '\"Meet George Jetson.\" Just those words will prompt viewers of a certain age to join in singing the show\'s catchy theme song. This popular primetime cartoon show features the Jetson family living in a utopian future. People live in housing in the sky, work a three-day workweek, drive aerocars that look like flying saucers and have incredible conveniences that leave them with plenty of leisure time. George, his homemaker wife Jane, and their children, Judy and Elroy, also have a robotic maid named Rosie and a talking dog named Astro. Airing first on ABC in the 1960s, the series was resurrected in the 1980s, with more episodes produced for syndication.\r\n', '3 Seasons', 60),
-(9, 'Battlestar Gallactica', 'battlestar.jpeg', 'battlestar.mp4', '1978', 'Battlestar Gallactica- In the seventh millennium, AD, Galactica is the only surviving battleship after an attack by the evil Cylons. As a result of the attack, peace is destroyed and most of humankind have been wiped out. Led by Commander Adama, Galactica and a hundred or so smaller ships flee to try to find refuge on the legendary but unknown planet Earth. The Cylons, with the help of the equally evil Count Baltar, are in hot pursuit.\r\n', '1 Season', 70),
-(10, 'Dallas', 'dallas.jpg', 'dallas.mp4', '1978', '\"Dallas\" is the saga of the Ewing family and its massive oil empire. Patriarch Jock has three sons. The eldest is J.R., the relentless CEO of Ewing Oil. Less obviously malicious are Bobby and Gary. Over a decade-plus of backstabbing, inbreeding, lust and greed, dozens of characters enter and exit the \"Dallas\" universe.', '14 Seasons', 70),
-(11, 'Jeopardy', 'jeopardy.jpeg', 'jeopardy.mp4', '1974', '\"Jeopardy!\" is a classic game show -- with a twist. The answers are given first, and the contestants supply the questions. Three contestants, including the previous show\'s champion, compete in six categories and in three rounds (with each round\'s \"answers\" being worth more prize money). In the third round, \"Final Jeopardy,\" the contestants can name their own jackpot -- as long as it\'s within the amount of money they\'ve already earned. If a player finishes the second round with zero dollars, they are eliminated from \"Final Jeopardy.\" The first version of \"Jeopardy!,\" which aired from 1964 to 1975 on NBC, was hosted by Art Fleming. Alex Trebek is the current host; he began with the program in 1984 (at the start of its syndicated run)\r\n', '3 Seasons', 70),
-(12, 'Golden Girls', 'goldengirls.jpeg', 'goldengirls.mp4', '1985', 'Girls from different parts of the country participate in a series of contests and demonstrate their unique skills and talent to win the coveted title.\r\n', '7 Seasons', 70),
-(13, 'Cops', 'cops.jpeg', 'cops.mp4', '1989', 'Television cameras follow real-life law enforcement officers and capture the action as they perform their daily duty to serve and protect the public.\r\n', '29 Seasons', 80),
-(14, 'The simpsons', 'simpsons.jpeg', 'simpsons.mp4', '1989', 'Working-class father Homer Simpson and his dysfunctional family deal with comical situations and the ups-and-downs of life in the town of Springfield.\r\n', '30 Seasons', 80),
-(15, 'Fresh Prince of Bel-Air', 'freshprince.mp4', 'freshprince.mp4', '1990', 'Will Smith more or less plays himself in this good-natured NBC sitcom. As the show\'s popular theme song explains, fictional Will\'s mom sends him away from his rough Philadelphia neighborhood to live with wealthy Uncle Phil and Aunt Vivian in Bel-Air. Will often has fun at the expense of stuck-up cousins Carlton and Hilary.\r\n', '6 Seasons', 90),
-(16, 'Saved By The Bell', 'bell.jpeg', 'bell.mp4', '1990', 'Zack Morris and A C Slater, who study at Bayside High, vie for their classmate Kelly Kapowski\'s attention. However, Principal Belding keeps an eye on them and tries to ruin their plans.\r\n', '4 Seasons', 90),
-(17, 'That 70s Show', 'that70s.jpeg', 'that70s.mp4', '1998', 'Eric, a high school student, and his group of teenage friends struggle to lead purposeful lives whilst going through the tumultuous phase of adolescence\r\n', '8 Seasons', 90);
 
 -- --------------------------------------------------------
 
@@ -1233,7 +1270,7 @@ ALTER TABLE `tbl_arating`
 -- Indexes for table `tbl_audio`
 --
 ALTER TABLE `tbl_audio`
-  ADD PRIMARY KEY (`audio_id`);
+  ADD PRIMARY KEY (`audios_id`);
 
 --
 -- Indexes for table `tbl_cast`
@@ -1345,16 +1382,22 @@ ALTER TABLE `tbl_mov_studio`
   ADD PRIMARY KEY (`mov_studio_id`);
 
 --
+-- Indexes for table `tbl_shows`
+--
+ALTER TABLE `tbl_shows`
+  ADD PRIMARY KEY (`shows_id`);
+
+--
+-- Indexes for table `tbl_songs`
+--
+ALTER TABLE `tbl_songs`
+  ADD PRIMARY KEY (`song_id`);
+
+--
 -- Indexes for table `tbl_studio`
 --
 ALTER TABLE `tbl_studio`
   ADD PRIMARY KEY (`studio_id`);
-
---
--- Indexes for table `tbl_tv`
---
-ALTER TABLE `tbl_tv`
-  ADD PRIMARY KEY (`tv_id`);
 
 --
 -- Indexes for table `tbl_urating`
@@ -1389,7 +1432,7 @@ ALTER TABLE `tbl_arating`
 -- AUTO_INCREMENT for table `tbl_audio`
 --
 ALTER TABLE `tbl_audio`
-  MODIFY `audio_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `audios_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_cast`
@@ -1500,16 +1543,22 @@ ALTER TABLE `tbl_mov_studio`
   MODIFY `mov_studio_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
+-- AUTO_INCREMENT for table `tbl_shows`
+--
+ALTER TABLE `tbl_shows`
+  MODIFY `shows_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `tbl_songs`
+--
+ALTER TABLE `tbl_songs`
+  MODIFY `song_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
 -- AUTO_INCREMENT for table `tbl_studio`
 --
 ALTER TABLE `tbl_studio`
   MODIFY `studio_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
---
--- AUTO_INCREMENT for table `tbl_tv`
---
-ALTER TABLE `tbl_tv`
-  MODIFY `tv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tbl_urating`
